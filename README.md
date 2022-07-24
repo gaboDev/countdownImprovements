@@ -23,7 +23,7 @@ to a function will provide us the ability to follow again single-responsibility 
    With this approach we define an scalable directory structure, also leave App.js the responsibility of implementation of Routing, Providers, etc 
    
 
-### Improvement on desing:
+### Improvement on design:
 A little upgrade on colors, design nad behaviour 
 
 
