@@ -14,10 +14,9 @@ Change of regular CSS file for Styled components, this approach will let us grow
 Also moving the logic layer to proper places, the old Countdown class component was handling the responsibility of date calculation, which at firs look is not that ad, but moving this calculation
 to a function will provide us the ability to follow again single-responsibility function and we could add unit test only for this function.
 
-### Refactoring directories structure
+### Updating directories structure
 
-       1. Components: single responsibility components, only the ones to rednder/format information.
-       Hooks
+       1. Components: single responsibility components, only the ones to render/format information
        2. Pages: Components in charge of layout, data handling and state management, in this case CountdownPage component.
        3. Utils: Utility functions like calculateCountdown inside dates.js file
 
