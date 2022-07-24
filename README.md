@@ -1,8 +1,6 @@
-#Countdown
+## Countdown Improvements
 
-##Improvements:
-
-###Functional components
+### Functional components
 Change all class components (Countdown component in this case) to a functional component, this approach will let us to define a single responsibility for our component which is just to render/formatting information, also by having single-responsibility components will let us more accurate create unit tests like the onde created for Card component.
 
 ### Styled components
