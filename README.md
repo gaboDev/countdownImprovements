@@ -1,87 +1,41 @@
-# Countdown
+#Countdown
 
-## Improved countdown
-The below component was designed to count down the days until our CTO's birthday, but it still needs some work. How can you make the implementation better?
+##Improvements:
 
-**Do a critique:** The current implementation isn't perfect. How could it be improved?
+###Functional components
+Change all class components (Countdown component in this case) to a functional component, this approach will let us to define a single responsibility for our component which is just to render/formatting information, also by having single-responsibility components will let us more accurate create unit tests like the onde created for Card component.
 
-* Pick an area of improvement to implement.
-* What would happen to the current code if the date were changed, the page layout was changed or the format was changed?
-* Does the current implementation follow best practices for HTML, CSS, JS and React?
+### Styled components
+Change of regular CSS file for Styled components, this approach will let us growth/maintain more efficiently our CSS code, also will provide an extra layer of logic to render styles base on props, etc
 
-**Spice it up:** Let's be honest, this countdown could be a whole lot more exciting.
+### Hooks
+ Implementation of hooks, this feature will let us add a new layer of logic, letting us follow the declarative programming of react, a good example of this
+ is the implementation of useInterval, a hook which was created to manage intervals following this declarative intention of React, also a useCountdown was created to manage extra information of the calculation, like adding a status of the countdown to update the app state accordingly,
+ also here we could add the formatting of the extra zeros to the right like in the first version of this project.
 
-* What could you do to create a greater sense of urgency?
-* How would you make this countdown more aesthetically pleasing?
-* Trust your design instincts, and explain how your design choices impact the user experience
+Also moving the logic layer to proper places, the old Countdown class component was handling the responsibility of date calculation, which at firs look is not that ad, but moving this calculation
+to a function will provide us the ability to follow again single-responsibility function and we could add unit test only for this function.
 
-## Getting Started with Create React App
+### Refactoring directories structure
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+       1. Components: single responsibility components, only the ones to rednder/format information.
+       Hooks
+       2. Pages: Components in charge of layout, data handling and state management, in this case CountdownPage component.
+       3. Utils: Utility functions like calculateCountdown inside dates.js file
 
-## Available Scripts
+   With this approach we define an scalable directory structure, also leave App.js the responsibility of implementation of Routing, Providers, etc 
+   
 
-In the project directory, you can run:
+### Improvement on desing:
+A little upgrade on colors, design nad behaviour 
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+###Further improvements:
+Since this was a timed exercise I did not have time to add everything I wanted, some of these pending improvements are:
+       
+1. Add CSS animations/transitions
+2. Add unit tests for all functions/components
+3. Refactoring calculateCountdown function
+4. Code refactorization (if needed)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
